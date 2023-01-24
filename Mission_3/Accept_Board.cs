@@ -13,7 +13,8 @@ namespace Mission_3
         }
         public void Board(string[] args)
         {
-
+            // class should display sample positions
+            // Next it should display board with each X or O at it's respective position
             Console.WriteLine("Each number in position of its respective square");
             Console.WriteLine("1 2 3");
             Console.WriteLine("4 5 6");
@@ -37,7 +38,7 @@ namespace Mission_3
                 }
                 count++;
             }
-
+            // display Player inputs at correct positions
             Console.WriteLine("     |     |     ");
             Console.WriteLine("  " + spot[0] + "  |  " + spot[1] + "  |  " + spot[2] + "  ");
             Console.WriteLine("_____|_____|_____");
@@ -51,10 +52,19 @@ namespace Mission_3
 
         public string winCheck(string[] arr)
         {
+            // class should check wether or not a player has won. If they have, display their name.
+            // otherwise display that 'nobody' has won
             string[] option = new string[2] { "X", "O" };
             string[] players = new string[2] { "player 1", "player 2" };
             string winner = "nobody";
             int value = 0;
+            foreach(string item in option)
+            {
+                if (item != "X" || item !="O")
+                {
+                    winner = "tie";
+                }
+            }
 
             foreach (string item in option)
             { 
@@ -92,6 +102,8 @@ namespace Mission_3
                 }
                 value++;
             }
+
+            // return winner if one exists
             return winner;
         }
 
