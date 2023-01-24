@@ -11,19 +11,23 @@ namespace Mission_3
         {
 
         }
-        public void Board(char[] args)
+        public void Board(string[] args)
         {
 
+            Console.WriteLine("Each number in position of its respective square");
+            Console.WriteLine("1 2 3");
+            Console.WriteLine("4 5 6");
+            Console.WriteLine("7 8 9 \n");
             char[] spot = new char[9];
             int count = 0;
-            foreach (char item in args)
+            foreach (string item in args)
             {
 
-                if (item == 'O')
+                if (item == "O")
                 {
                     spot[count] = 'O';
                 }
-                else if (item == 'X')
+                else if (item == "X")
                 {
                     spot[count] = 'X';
                 }
@@ -45,14 +49,14 @@ namespace Mission_3
             Console.WriteLine("     |     |     ");
         }
 
-        public string winCheck(char[] arr)
+        public string winCheck(string[] arr)
         {
-            char[] option = new char[2] { 'X', 'O' };
+            string[] option = new string[2] { "X", "O" };
             string[] players = new string[2] { "player 1", "player 2" };
             string winner = "nobody";
             int value = 0;
 
-            foreach (char item in option)
+            foreach (string item in option)
             { 
                 if ((arr[0] == item && arr[1] == item && arr[2] == item))
                 {

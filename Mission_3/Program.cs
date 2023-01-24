@@ -24,13 +24,14 @@ namespace Mission_3
                 if (playerTurn % 2 == 0)
                 {
                     while (inputContinue == true)
-                    {   
+                    {
+                        moveContinue = true;
                         while (moveContinue == true)
                         {
                             Console.WriteLine("Player 1, where would you like to move?");
                             movePosition = Convert.ToInt32(Console.ReadLine());
                             movePosition = movePosition - 1;
-                            if (movePosition <= 0 | movePosition >= 8)
+                            if (movePosition < 0 | movePosition > 8)
                             {
                                 Console.WriteLine("Please enter a number between 1 and 9");
                             }
@@ -58,8 +59,23 @@ namespace Mission_3
                 {
                     while (inputContinue == true)
                     {
-                        Console.WriteLine("Player 2, where would you like to move?");
-                        movePosition = Convert.ToInt32(Console.ReadLine());
+                        moveContinue = true;
+                        while (moveContinue == true)
+                        {
+                            Console.WriteLine("Player 2, where would you like to move?");
+                            movePosition = Convert.ToInt32(Console.ReadLine());
+                            movePosition = movePosition - 1;
+                            if (movePosition < 0 | movePosition > 8)
+                            {
+                                Console.WriteLine("Please enter a number between 1 and 9");
+                            }
+                            else
+                            {
+                                moveContinue = false;
+                            }
+                        }
+
+
 
                         if (string.IsNullOrEmpty(boardArray[movePosition]))
                         {
@@ -77,19 +93,21 @@ namespace Mission_3
                 //for (int i = 0; i < 9; i++)
                 //    Console.WriteLine(boardArray[i]);
                 ab.Board(boardArray);
+
                 winner = ab.winCheck(boardArray);
-                
-                if (winner == "player1")
+                Console.WriteLine(winner);
+                if (winner == "player 1")
                 {
                     Console.WriteLine("Player 1 is the winner");
                     gameContinue = false;
                 }
-                else if (winner == "player2")
+                else if (winner == "player 2")
                 {
                     Console.WriteLine("Player is the winner");
                     gameContinue = false;
                 }
             }
+            Console.WriteLine("Thanks for playing!");
 
         }
 
