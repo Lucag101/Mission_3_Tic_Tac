@@ -17,7 +17,7 @@ namespace Mission_3
             Console.WriteLine("Each number in position of its respective square");
             Console.WriteLine("1 2 3");
             Console.WriteLine("4 5 6");
-            Console.WriteLine("7 8 9");
+            Console.WriteLine("7 8 9 \n");
             char[] spot = new char[9];
             int count = 0;
             foreach (string item in args)
