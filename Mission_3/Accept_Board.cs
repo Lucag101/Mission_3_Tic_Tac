@@ -58,13 +58,7 @@ namespace Mission_3
             string[] players = new string[2] { "player 1", "player 2" };
             string winner = "nobody";
             int value = 0;
-            foreach(string item in option)
-            {
-                if (item != "X" || item !="O")
-                {
-                    winner = "tie";
-                }
-            }
+
 
             foreach (string item in option)
             { 
